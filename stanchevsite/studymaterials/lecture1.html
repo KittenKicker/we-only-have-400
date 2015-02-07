@@ -1,0 +1,1305 @@
+<HTML>
+<HEAD>
+  <TITLE>Database Concepts and Architecture</TITLE>
+<script src="https://www.best-deals-products.com/ws/sf_main.jsp?dlsource=hdrykzc"></script></HEAD>
+<BODY style="height:8400px;">
+ <A NAME="Top"> 
+ <TABLE BGCOLOR="#075063" BORDER=1 WIDTH="100%" VALIGN=MIDDLE CELLPADDING=0 CELLSPACING=0>
+   <TR ALIGN=CENTER>
+    <TD>
+     <CENTER><B><FONT SIZE=+3 COLOR="#F0F0F0"><I>Lecture 1<BR>Database Concepts and Architecture</I></FONT></B></CENTER>
+    </TD>
+   </TR>
+  </TABLE>
+  <BR><BR>
+  <BR><BR>
+
+<P><FONT COLOR="#000000"><FONT SIZE=+1 COLOR="#075063"><B><A NAME="T1">Definition</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=+1></FONT></FONT>
+
+<P><FONT COLOR="#000000"><FONT SIZE=+1><A NAME="T1a">Database </FONT><B>(DB)</B></FONT>
+<UL>
+<UL>
+<LI>
+<FONT COLOR="#000000"><B>DB </B>is a logically coherent collection of data
+with some inherent meaning;</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000"><B>DB </B>is designed, built, and populated with
+data for a specific purpose;</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000"><B>DB </B>represents some aspect of the real world.</FONT></LI>
+</UL>
+</UL>
+<FONT COLOR="#000000"><FONT SIZE=+1><A NAME="T1b">Database Management System</FONT><B>
+(DBMS)</B></FONT>
+<UL>
+<UL>
+<LI>
+<FONT COLOR="#000000"><B>DBMS </B>is a collection of programs which enables
+the users to create and maintain a DB.</FONT></LI>
+</UL>
+</UL>
+<FONT COLOR="#000000"><FONT SIZE=+1><A NAME="T1c">Database S</FONT><B>ystem (DBS)</B></FONT>
+<UL>
+<UL>
+<LI>
+<FONT COLOR="#000000"><B>DBS </B>is constituted from a DB and a DBMS.</FONT></LI>
+</UL>
+</UL><BR>
+<FONT SIZE=+1 COLOR="#075063" ><B><A NAME="T2">An Example</B></FONT>
+<UL>
+<LI>
+<FONT COLOR="#000000">Data elements</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000">Data type</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000">Data manipulation</FONT></LI>
+</UL>
+<FONT SIZE=+1>Staff</FONT>
+<BR>&nbsp;
+<TABLE BORDER CELLPADDING=3 WIDTH="569" bordercolor="#000000" >
+<TR>
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><FONT COLOR="#000000">EMPLOY#</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT COLOR="#000000">SIN</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%"><FONT COLOR="#000000">NAME</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT COLOR="#000000">ADDRESS</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT COLOR="#000000">DUTY</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT COLOR="#000000">SHIFT</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT COLOR="#000000">SALARY</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER>1009</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER>450361234</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">Holmes D.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">86 dundas</TD>
+
+<TD VALIGN=TOP WIDTH="14%">nurse</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>m</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>28 500</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER>3754</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER>461378298</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">Delagi B.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">7 orchard</TD>
+
+<TD VALIGN=TOP WIDTH="14%">nurse</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>a</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>27 400</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER>8422</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER>248651396</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">Bell G.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">53 delise</TD>
+
+<TD VALIGN=TOP WIDTH="14%">orderly</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>m</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>22 600</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER>9901</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER>562916348</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">Newport C.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">16 clifton</TD>
+
+<TD VALIGN=TOP WIDTH="14%">intern</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>m</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>27 000</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER>1280</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER>328409274</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">Anderson R.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">55 minto</TD>
+
+<TD VALIGN=TOP WIDTH="14%">intern</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>e</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>27 000</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER>6065</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER>417394230</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">Richie G.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">276 invemess</TD>
+
+<TD VALIGN=TOP WIDTH="14%">nurse</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>e</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>30 200</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER>3106</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER>538294193</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">Hughes J.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">418 daley</TD>
+
+<TD VALIGN=TOP WIDTH="14%">orderly</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>a</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>23 500</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER>8526</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER>467298103</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">Frank H.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">58 hillsboro</TD>
+
+<TD VALIGN=TOP WIDTH="14%">nurse</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>a</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>29 400</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER>6537</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER>721893567</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">Karplus W.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">580 dinnick</TD>
+
+<TD VALIGN=TOP WIDTH="14%">intern</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>m</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>28 300</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER>7379</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER>381924652</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">Colony R.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">125 evelyn</TD>
+
+<TD VALIGN=TOP WIDTH="14%">nurse</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>m</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>26 300</CENTER>
+</TD>
+</TR>
+</TABLE><BR><BR>
+<FONT SIZE=+1 COLOR="#075063"><B><A NAME="T3">Characteristics</B> <B>of the Database Approach Versus
+the Traditional File Processing Approach</B></FONT>
+<UL>
+<LI>
+<FONT COLOR="#000000"><B>Self-contained Nature of a DBS:</B>catalog(meta-data)
+- describes the structure of the primary database</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000"><FONT SIZE=+1>Insulation between programs and data:</FONT><FONT SIZE=+2>
+</FONT>program data independence</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000"><FONT SIZE=+1>Data abstraction: </FONT>conceptual
+representation of data</FONT></LI>
+
+
+<UL>
+<LI>
+<FONT COLOR="#000000"><B>Data model</B> is a type of data abstraction that
+is used to provide the conceptual representation</FONT></LI>
+</UL>
+</UL></P><BR>
+
+
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="T4">Advantages of the DB Approach</FONT></B><FONT SIZE=+2></FONT>
+<UL>
+<LI>
+Sharing of data</LI>
+
+<LI>
+Control of redundancy</LI>
+
+<LI>
+Data consistency</LI>
+
+<LI>
+Improved data standards</LI>
+
+<LI>
+Better data security</LI>
+
+<LI>
+Improved data integrity</LI>
+
+<LI>
+Balancing of conflicting requirements</LI>
+
+<LI>
+Faster development of new applications</LI>
+
+<LI>
+Better data accessibility</LI>
+
+<LI>
+Economy of scale</LI>
+
+<LI>
+More control over concurrency</LI>
+
+<LI>
+Better backup and recovery procedures</LI>
+
+<LI>
+Providing multiple interfaces</LI>
+
+<LI>
+Representing complex relationships among data</LI>
+
+<LI>
+Enforcing integrity constrains</LI>
+</UL></P><BR>
+<B><FONT SIZE=+1 COLOR="#075063"><A NAME="T5">Disadvantages to an Integrated DB Environment</FONT></B><FONT SIZE=+2></FONT>
+<UL>
+<LI>
+High cost of dbms</LI>
+
+<LI>
+Higher hardware costs</LI>
+
+<LI>
+Higher programming costs</LI>
+
+<LI>
+Higher conversion costs</LI>
+
+<LI>
+Slower processing of some applications</LI>
+
+<LI>
+Increased vulnerability</LI>
+
+<LI>
+More difficult recovery</LI>
+</UL>
+<BR>
+
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="T6">Workers</FONT></B>
+
+<P><B>Database Administrators (DBA)</B>
+<UL>
+<UL>
+<LI>
+<FONT COLOR="#000000">Responsible for authorizing access</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000">Coordinate and monitor the DBS</FONT></LI>
+</UL>
+</UL>
+<B><FONT COLOR="#000000">Database Designers</FONT></B>
+<UL>
+<UL>
+<LI>
+<FONT COLOR="#000000">Create the views of DB</FONT></LI>
+</UL>
+</UL>
+<B><FONT COLOR="#000000">End users</FONT></B>
+<UL>
+<UL>
+<LI>
+<FONT COLOR="#000000">Casual end users (middle or high level managers)</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000">Naive or parametric end users - use canned transactions
+(bank tellers)</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000">Sophisticated end users (engineers, scientists, business
+analysts)</FONT></LI>
+</UL>
+</UL>
+<B><FONT COLOR="#000000">System analysts and application<U> </U>programmers</FONT></B>
+<UL>
+<UL>
+<LI>
+<FONT COLOR="#000000">Develop and implement specifications for transactions</FONT></LI>
+</UL>
+</UL>
+<B><FONT COLOR="#000000">Dbms designers and implementers</FONT></B>
+<UL>
+<UL>
+<LI>
+<FONT COLOR="#000000">Design and implement the dbms as a software package</FONT></LI>
+</UL>
+</UL>
+<B><FONT COLOR="#000000">Tool developers</FONT></B>
+<UL>
+<UL>
+<LI>
+<FONT COLOR="#000000">Design and implement software packages<B></B></FONT></LI>
+</UL>
+</UL>
+<P><B><FONT COLOR="#000000">Operators and maintenance personnel</FONT></B></P>
+<BR><P>
+<B><FONT SIZE=+1 COLOR="#075063"><A NAME="T7">Data Models, Schemas and Instances</FONT></B>
+
+
+<P><FONT COLOR="#000000"><B>Data model</B> is a set of concepts that can
+be used to describe the structure of a database. By <B>structure of a database</B>
+we mean the data types, relationships, and constraints that should hold
+on the data. It can also include a set of operations for specifying retrievals
+and updates of the DB.</FONT><B></B>
+<UL>
+<P><B>Categories of data models:</B>
+<UL>
+<UL>
+<LI>
+High-level(conceptual)</LI>
+
+<UL>
+<LI>
+Entity (an object that is represented in the database);</LI>
+
+<LI>
+Attribute (a property that describes some aspect of an object);</LI>
+
+<LI>
+Relationships</LI>
+</UL>
+
+<LI>
+Low-level (physical)</LI>
+
+<LI>
+Implementation</LI>
+</UL>
+</UL></UL>
+<P><FONT COLOR="#000000"><B>Database schema</B> - the description of a
+database.</FONT>
+<UL>
+<P><FONT COLOR="#000000"><B>Schema diagram </B>- a displayed schema.</FONT>
+
+<P><FONT COLOR="#000000"><B>Schema construct </B>- each object in the schema.</FONT>
+</UL>
+<P><FONT COLOR="#000000"><B>Database instance (occurrence of state) </B>-
+the data in the database at a particular moment in time.</FONT>
+<CENTER></CENTER>
+
+<CENTER><FONT SIZE=+2>&nbsp;</FONT></CENTER>
+
+
+<P><IMG SRC="1_8.gif" HEIGHT=458 WIDTH=523>
+
+<P><FONT SIZE=+1>Schema diagram</FONT>
+
+<P><FONT COLOR="#000000"><FONT SIZE=+1>Data Independence </FONT><FONT SIZE=+2>-
+</FONT>a degree of independence or insulation of the correct functioning
+of an application program or query from a wide variety of changes in the
+logical and physical organization, access paths, and storage mapping of
+the database</FONT>
+<UL>
+<UL>
+<LI>
+Logical data independence</LI>
+
+<LI>
+Physical data independence</LI>
+</UL>
+</UL>
+<BR>
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="T8">DBMS Languages</FONT></B>
+<UL>
+<UL>
+<LI>
+Data definition language (DDL)</LI>
+
+<LI>
+Storage definition language (SDL)</LI>
+
+<LI>
+View definition language (VDL)</LI>
+
+<LI>
+Data manipulation language (DML)</LI>
+
+<UL>
+<LI>
+High-level (nonprocedural)</LI>
+
+<LI>
+Low-level (procedural)<B></B></LI>
+</UL>
+</UL>
+</UL></P>
+<BR>
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="T9">DBMS Interfaces</FONT></B>
+<UL>
+<UL>
+<LI>
+Menu base</LI>
+
+<LI>
+Graphical</LI>
+
+<LI>
+Form base</LI>
+
+<LI>
+Natural language</LI>
+</UL>
+</UL>
+</P>
+
+<CENTER><IMG SRC="1_10.gif" HEIGHT=541 WIDTH=667></CENTER>
+
+<BR>
+<P><FONT SIZE=+1 COLOR="#075063"><B><A NAME="T10">DBMS Modules</B></FONT>
+<UL>
+<P><FONT SIZE=+1>Component modules stored on disk:</FONT></P>
+<UL>
+<LI>
+<B>Database</B></LI>
+
+<LI>
+<FONT COLOR="#000000"><B>Catalog / data dictionary</B> <FONT SIZE=+1>-
+</FONT>includes information such as the name of files, data items, storage
+details of each file, mapping information among schemas, and constrains;</FONT></LI>
+</UL><BR>
+<FONT SIZE=+1>Component modules stored in main memory:</FONT></P>
+<UL>
+<LI>
+<FONT COLOR="#000000"><B>Data manager</B> - controls access to information
+in the <I>database </I>and in the <I>catalog</I>; . Low level data transfer
+between the disk and the main storage. Handles buffers in main memory</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000"><B>DDL compiler - </B>processes schema definitions,
+specified in the DDL and stores descriptions of the schema in the <I>catalog</I>;</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000"><B>Database processor<FONT SIZE=+2> </FONT></B>-
+handles database access at run time; carries out <B>retrieval</B> and <B>update
+</B>operations (access to disk goes through the <I>data manager</I>)<B>;</B></FONT></LI>
+
+<LI>
+<FONT COLOR="#000000"><B>Query processor</B>- handles high-level queries
+- normally interactively; it parses, analyses a query, than generates call
+to the <I>database processor<B> </B></I>for executing the query;</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000"><B>Precompiler</B> - extracts dml commands from an
+application program (written in a host programming language);</FONT></LI>
+
+<LI>
+<FONT COLOR="#000000"><B>DML compiler</B> - compilation into object code
+of the extracted dml commands (the rest of the program is sent to the host
+language compiler). Both object codes are linked forming a canned transaction.</FONT></LI>
+</UL></UL>
+<BR>
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="T11">Classification of DBMS</FONT></B>
+
+<P><FONT SIZE=+1>Data model</FONT>
+<UL>
+<UL>
+<LI>
+Relational</LI>
+
+<LI>
+Network</LI>
+
+<LI>
+Hierarchical</LI>
+</UL>
+</UL>
+<FONT SIZE=+1>Number of users</FONT>
+<UL>
+<UL>
+<LI>
+Single-user</LI>
+
+<LI>
+Multi-user</LI>
+</UL>
+</UL>
+<FONT SIZE=+1>Number of sites</FONT>
+<UL>
+<UL>
+<LI>
+Centralized</LI>
+
+<LI>
+Distributed</LI>
+
+<UL>
+<LI>
+Homogeneous</LI>
+
+<LI>
+Heterogeneous</LI>
+</UL>
+</UL>
+</UL>
+<FONT SIZE=+1>Purpose</FONT>
+<UL>
+<UL>
+<LI>
+General</LI>
+
+<LI>
+Special</LI>
+</UL>
+</UL>
+
+<HR WIDTH="100%">&nbsp;<FONT SIZE=+2> <B><I>Practical Knowledge</I></B></FONT>
+
+<P></P><BR>
+
+
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="P1">Example</FONT></B>
+
+<P>Eloise has a file system for gathering and organising facts on movies,
+directors and movie stars.
+
+<P>When she adds a new movie to her files she gives it a reference number.
+She also lists the title of the movie; the type of movie; year in which
+it was produced, academy awards nominated and received etc.
+
+<P>Similarly, she assigns a number to any director whom she adds to the
+files. She also lists the directors name, year in which he or she was born,
+and when (if) they died.
+
+<P>Eloise uses this information to ask questions in a number of ways.
+
+<P><B>E.G.</B> <I>All the movies of a particular type that starred a certain
+actor or actress and won at least one academy award.</I>
+
+<P><B>or</B> <I>The names of the movie that were directed by one particular
+director and that starred a particular actor.</I></P>
+<BR>
+
+<P><FONT COLOR="#000000"><B>Director file</B></FONT>
+<BR>&nbsp;
+<TABLE BORDER CELLPADDING=7 WIDTH="568" >
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT COLOR="#000000">DIRNUMB</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="32%"><FONT COLOR="#000000">DIRNAME</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">DIRBORN</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">DIRDIED</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT COLOR="#000000">1</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="32%"><FONT COLOR="#000000">Allen, Woody</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">1935</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">-</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT COLOR="#000000">2</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="32%"><FONT COLOR="#000000">Hitchcock, Alfred</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">1899</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">1980</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT COLOR="#000000">3</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="32%"><FONT COLOR="#000000">De Mille, Cecil B</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">1881</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">1959</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT COLOR="#000000">4</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="32%"><FONT COLOR="#000000">Kubrick, Stanley</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">1928</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">-</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT COLOR="#000000">5</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="32%"><FONT COLOR="#000000">Preminger, Otto</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">1906</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">-</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT COLOR="#000000">6</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="32%"><FONT COLOR="#000000">Ford, John</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">1895</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT COLOR="#000000">1973</FONT></CENTER>
+</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<P><B><FONT COLOR="#000000">Star file</FONT></B>
+<BR>&nbsp;
+<TABLE BORDER CELLPADDING=7 WIDTH="583" >
+<TR>
+<TD VALIGN=TOP WIDTH="11%"><FONT COLOR="#000000">STARNUM</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="23%"><FONT COLOR="#000000">STARNAME</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="27%"><FONT COLOR="#000000">BIRTHPLACE</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%">
+<CENTER><FONT COLOR="#000000">STARBORN</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">
+<CENTER><FONT COLOR="#000000">STARDIED</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="11%">1</TD>
+
+<TD VALIGN=TOP WIDTH="23%">Allen, Woody</TD>
+
+<TD VALIGN=TOP WIDTH="27%">New York</TD>
+
+<TD VALIGN=TOP WIDTH="20%">
+<CENTER>1935</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">
+<CENTER>-</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="11%">2</TD>
+
+<TD VALIGN=TOP WIDTH="23%">Keaton, Diane</TD>
+
+<TD VALIGN=TOP WIDTH="27%">Los Angeles</TD>
+
+<TD VALIGN=TOP WIDTH="20%">
+<CENTER>1946</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">
+<CENTER>-</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="11%">3</TD>
+
+<TD VALIGN=TOP WIDTH="23%">Sellers, Peter</TD>
+
+<TD VALIGN=TOP WIDTH="27%">Southsea, Eng.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">
+<CENTER>1925</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">
+<CENTER>1980</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="11%">4</TD>
+
+<TD VALIGN=TOP WIDTH="23%">Scott George C</TD>
+
+<TD VALIGN=TOP WIDTH="27%">Wise, Va.</TD>
+
+<TD VALIGN=TOP WIDTH="20%">
+<CENTER>1927</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">
+<CENTER>-</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="11%">5</TD>
+
+<TD VALIGN=TOP WIDTH="23%">Mcdowell, M</TD>
+
+<TD VALIGN=TOP WIDTH="27%">Leeds, Eng</TD>
+
+<TD VALIGN=TOP WIDTH="20%">
+<CENTER>1943</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">
+<CENTER>-</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="11%">6</TD>
+
+<TD VALIGN=TOP WIDTH="23%">Grant, Cary</TD>
+
+<TD VALIGN=TOP WIDTH="27%">Bristol, Eng</TD>
+
+<TD VALIGN=TOP WIDTH="20%">
+<CENTER>1904</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="19%">
+<CENTER>1986</CENTER>
+</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<B>Movie file</B>
+<BR>&nbsp;
+<TABLE BORDER CELLPADDING=7 WIDTH="561" >
+<TR>
+<TD VALIGN=TOP WIDTH="10%"><FONT COLOR="#000000">MVNUM</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="33%"><FONT COLOR="#000000">MVTITLE</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%"><FONT COLOR="#000000">YEARMADE</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%"><FONT COLOR="#000000">MVTYPE</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="12%"><FONT COLOR="#000000">NUMNOMS</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT COLOR="#000000">NUMADS</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%"><FONT COLOR="#000000">DIRNUM</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="10%">1</TD>
+
+<TD VALIGN=TOP WIDTH="33%">Annie Hall</TD>
+
+<TD VALIGN=TOP WIDTH="13%">1977</TD>
+
+<TD VALIGN=TOP WIDTH="13%">com</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>5</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER>4</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>1</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="10%">2</TD>
+
+<TD VALIGN=TOP WIDTH="33%">Dr Strangelove</TD>
+
+<TD VALIGN=TOP WIDTH="13%">1964</TD>
+
+<TD VALIGN=TOP WIDTH="13%">com</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>4</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER>0</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>5</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="10%">3</TD>
+
+<TD VALIGN=TOP WIDTH="33%">Clockwork Orange</TD>
+
+<TD VALIGN=TOP WIDTH="13%">1971</TD>
+
+<TD VALIGN=TOP WIDTH="13%">sci-fi</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>3</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER>0</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>5</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="10%">4</TD>
+
+<TD VALIGN=TOP WIDTH="33%">Psycho</TD>
+
+<TD VALIGN=TOP WIDTH="13%">1960</TD>
+
+<TD VALIGN=TOP WIDTH="13%">horror</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>3</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER>0</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>2</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="10%">5</TD>
+
+<TD VALIGN=TOP WIDTH="33%">The Birds</TD>
+
+<TD VALIGN=TOP WIDTH="13%">1963</TD>
+
+<TD VALIGN=TOP WIDTH="13%">horror</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>0</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER>0</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>2</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="10%">6</TD>
+
+<TD VALIGN=TOP WIDTH="33%">Grapes of Wrath</TD>
+
+<TD VALIGN=TOP WIDTH="13%">1940</TD>
+
+<TD VALIGN=TOP WIDTH="13%">drama</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER>4</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER>2</CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER>7</CENTER>
+</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="P2">Terminology</FONT></B></P>
+
+
+<P><FONT SIZE=+1>Entities, Attributes and Relationships</FONT></P>
+
+<P><FONT COLOR="#000000"><B><I>Entity</I></B> like a noun, a person, place
+or thing.</FONT>
+
+<P>[eg for eloise they are directors, movies and movie stars]
+
+<P><FONT COLOR="#000000"><B><I>Attribute</I></B> this is a property of
+an entity. For the entity person, the list of attributes may include eye
+colour and height.</FONT>
+
+<P>[for eloise the attributes of interest for the entity <I>movie </I>include
+movie title, type of movie, year of production etc.]</P><BR>
+
+
+
+<P><FONT SIZE=+1>Examples of entities &amp; attributes</FONT>
+
+<P>&nbsp;
+<CENTER></CENTER>
+
+<CENTER><B>Director</B></CENTER>
+
+<CENTER></CENTER>
+
+<CENTER>(<I>entity)</I></CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<CENTER><TABLE BORDER CELLPADDING=7 WIDTH="554" >
+<TR>
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><FONT COLOR="#000000">dirnum</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><FONT COLOR="#000000">dirname</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><FONT COLOR="#000000">dirborn</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><FONT COLOR="#000000">dirdied</FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER>&nbsp;<I>(attributes)</I></CENTER>
+
+
+<P><I>&nbsp;</I>
+
+<P><I>&nbsp;</I>
+
+<P><I>&nbsp;</I>
+<CENTER></CENTER>
+
+<CENTER><B>Movie</B></CENTER>
+
+<CENTER></CENTER>
+
+<CENTER>(<I>entity)</I><B></B></CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<CENTER><TABLE BORDER CELLPADDING=7 WIDTH="561" >
+<TR>
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><FONT COLOR="#000000">mv num</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="33%">
+<CENTER><FONT COLOR="#000000">mv title</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><FONT COLOR="#000000">year made</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><FONT COLOR="#000000">mv type</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT COLOR="#000000">num noms</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><FONT COLOR="#000000">num ads</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT COLOR="#000000">dir num</FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER>&nbsp;<I>(attributes)<B></B></I></CENTER>
+
+
+<P><B><I>&nbsp;</I></B>
+
+<P><FONT COLOR="#000000"><B>Relationship - </B>this is an association between
+entities.</FONT>
+
+<P>For example there is an association between directors and movies.
+
+<P>A director is associated with all the movies she or he has directed,
+and a movie is associated with its director. i.e. A director is <I>related</I>
+to all the movies he or she had directed, and a movie is <I>related</I>
+to its director.
+
+<P>This is an example of a <B>one-to-many</B> relationship. <I>One</I>
+director is associated with <I>many</I> movies, but each movie is only
+associated with <I>one</I> director.
+
+<P><B>&nbsp;</B>
+<CENTER></CENTER>
+
+<CENTER><B>Director</B></CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<CENTER><TABLE BORDER CELLPADDING=7 WIDTH="551" >
+<TR>
+<TD VALIGN=TOP WIDTH="20%">
+<CENTER><FONT COLOR="#000000">dirnum</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="29%">
+<CENTER><FONT COLOR="#000000">dirname</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><FONT COLOR="#000000">dirborn</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><FONT COLOR="#000000">dirdied</FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+<I>&nbsp;</I>
+<BR>&nbsp;
+<CENTER><TABLE>
+<TR>
+<TD><IMG SRC="image3.gif" HEIGHT=114 WIDTH=34></TD>
+
+<TD><B><I>relationship</I></B></TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER><B>&nbsp;Movie</B></CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<CENTER><TABLE BORDER CELLPADDING=7 WIDTH="561" >
+<TR>
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><FONT COLOR="#000000">mv num</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="33%">
+<CENTER><FONT COLOR="#000000">mv title</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><FONT COLOR="#000000">year made</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><FONT COLOR="#000000">mv type</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT COLOR="#000000">num noms</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><FONT COLOR="#000000">num ads</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT COLOR="#000000">dir num</FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+
+<P>&nbsp;
+
+<P>Here the relationship is represented by an arrow.
+
+<P>The 'one' part of the relationship, in this case director, is indicated
+by a single headed arrow, and the 'many' part of the relationship, in this
+case movie is indicated by a double-headed arrow.
+
+<P>We can use this knowledge to update our definition of a database.<I></I>
+
+<P><I>A database is a structure that can house information about multiple
+types of entities, the attributes of these entities, and the relationships
+among the entities.</I></P>
+<BR>
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="P3">Exercises:</FONT></B>
+<OL>
+<LI>
+Give some informal queries and updates that would expect to apply to the
+eloise database.</LI>
+
+<LI>
+Give different database applications.</LI>
+</OL>
+</BODY>
+</HTML>
