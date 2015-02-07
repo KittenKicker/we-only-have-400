@@ -1,0 +1,991 @@
+<HTML>
+<HEAD>
+  <TITLE>Database Systems Development</TITLE>
+</HEAD>
+<BODY>
+  <A NAME="Top">
+  <TABLE BGCOLOR="#075063" BORDER=1 WIDTH="100%" VALIGN=MIDDLE CELLPADDING=0 CELLSPACING=0>
+   <TR ALIGN=CENTER>
+    <TD>
+     <CENTER><B><FONT SIZE=+3 COLOR="#F0F0F0"><I>Lecture 2<BR> Database Systems Development Data Modelling Using the Entity - Relationship Model</I></FONT></B></CENTER>
+    </TD>
+   </TR>
+  </TABLE>
+  <BR>
+
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="T1">Life Cycle Models&nbsp;</FONT></B></P>
+
+<P><B>Basic idea:<FONT SIZE=+2>&nbsp;</FONT></B>There is a well-defined
+process by which an application is conceived, developed and implemented</P>
+
+<UL>
+<LI>Each stage of the development cycle must finish before the next can
+start (ideally)</LI>
+
+<LI>Descriptions of phases in cycle differ in detail</LI>
+
+<LI>General acceptance of 3 major stages:</LI>
+</UL>
+
+<UL>
+<UL>
+<LI>Definition</LI>
+
+<LI>Development</LI>
+
+<LI>Installation &amp; operation&nbsp;</LI>
+</UL>
+</UL>
+
+<P><B>1. Definition stage&nbsp;</B></P>
+
+<UL>
+<LI>Proposal definition</LI>
+
+<LI>Feasibility assessment</LI>
+
+<LI>Information requirements analysis</LI>
+
+<LI>Conceptual design (user oriented)</LI>
+</UL>
+
+<P><B>2. Development stage</B></P>
+
+<UL>
+<LI>Physical system design (internal schema, file design)</LI>
+
+<LI>Program development</LI>
+
+<LI>Procedure development&nbsp;</LI>
+</UL>
+
+<P><B>3. Installation &amp; Operation</B></P>
+
+<UL>
+<LI>Conversion</LI>
+
+<LI>Operation &amp; maintenance</LI>
+
+<LI>Post audit<B>&nbsp;</B></LI>
+</UL></P><BR>
+
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="T2">The Prototyping Approach</FONT></B></P>
+
+<P><B>Basic idea:&nbsp;</B>Easier to assess an existing system than an
+imaginary one </P>
+
+<P>So, system is developed by rapid implementation of prototype system
+and this is refined until the client is satisfied.&nbsp;</P>
+
+<P><B>Four step process:&nbsp;</B></P>
+
+<UL>
+<LI>Identify user information requirement</LI>
+
+<LI>Develop initial prototype system</LI>
+
+<LI>Use prototype to refine requirements</LI>
+
+<LI>Revise &amp; enhance prototype</LI>
+</UL>
+
+<P><IMG SRC="stuid.gif" HEIGHT=155 WIDTH=213></P>
+
+
+<P><FONT SIZE=+1>Attribute Types</FONT></P>
+
+<UL>
+<LI>Composite</LI>
+
+<LI>Atomic</LI>
+
+<LI>Single-valued</LI>
+
+<LI>Multi-valued</LI>
+
+<LI>Derived</LI>
+
+<LI>Null value</LI>
+</UL></P><BR>
+
+<P><B><A NAME="T3"><FONT SIZE=+1 COLOR="#075063"><B>Entity Types</B></FONT> - set
+of entities that have the same attributes</FONT></P>
+
+<UL>
+<LI><FONT COLOR="#000000">Entity type schema - the entity type description</FONT></LI>
+
+<LI><FONT COLOR="#000000">Extension of the entity type - the set of individual
+entity instance at a particular moment of time </FONT></LI>
+</UL>
+
+<P><B>schema student (stuid, stfn, stln, major, credits )</B></P>
+
+<UL>
+<UL>
+<P><FONT SIZE=+1><B>Instances</B> </FONT></P>
+</UL>
+</UL>
+
+<CENTER><P>
+<HR ALIGN=LEFT WIDTH="30%"></P></CENTER>
+
+<UL>
+<UL>
+<P>( s1015</P>
+
+<P>Jones</P>
+
+<P>Mary</P>
+
+<P>Math</P>
+
+<P>42 )</P>
+</UL>
+</UL>
+
+<P>
+<HR ALIGN=LEFT WIDTH="30%"></P>
+
+<BR>
+
+<P><FONT SIZE=+1>Key Attributes of An Entity Type</FONT></P>
+
+<UL>
+<LI><FONT COLOR="#000000"><B>Key attribute (uniqueness)</B> - An attribute,
+whose values are distinct for each individual entity</FONT></LI>
+
+<UL>
+<LI>Atomic attribute</LI>
+
+<LI>Composite attribute</LI>
+</UL>
+</UL>
+
+<P><FONT COLOR="#000000"><B>Value sets ( domain ) of attributes -</B><FONT SIZE=+2>
+</FONT>Specifies the set of values that may be assigned to that attribute,
+for each individual entity<FONT SIZE=+2>&nbsp;</FONT></FONT></P>
+
+<P><B>student<B> </B></B></P>
+
+<TABLE BORDER=1 CELLPADDING=8 WIDTH="100" >
+<TR>
+<TD>
+<CENTER><P>stuid</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>stln</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>stfn</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>major</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>credits</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>s1015</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Jones</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Mary</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>math</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>42</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>s1005</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Lee</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Perry</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>history</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>3</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>s1001</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Smith</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Tom</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>history</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>90</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>s1010</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Burns</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Edward</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>art</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>63</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>s1002</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Chin</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Ann</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>math</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>36</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>s1013</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Mccarthy</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Owen</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>math</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>0</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>s1020</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Rivera</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>Jane</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>csc</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>15</P></CENTER>
+</TD>
+</TR>
+</TABLE></P><BR>
+
+<P><B>class</B></P>
+
+<TABLE BORDER=1 CELLPADDING=8 WIDTH="100" >
+<TR>
+<TD>course# </TD>
+
+<TD>facid</TD>
+
+<TD>sched</TD>
+
+<TD>room</TD>
+</TR>
+
+<TR>
+<TD>art103a</TD>
+
+<TD>f101</TD>
+
+<TD>mwf9</TD>
+
+<TD>h221</TD>
+</TR>
+
+<TR>
+<TD>hst205a</TD>
+
+<TD>f115</TD>
+
+<TD>mwf11</TD>
+
+<TD>h221</TD>
+</TR>
+
+<TR>
+<TD>csc201a</TD>
+
+<TD>f105</TD>
+
+<TD>tuthf10</TD>
+
+<TD>m110</TD>
+</TR>
+
+<TR>
+<TD>mth101b</TD>
+
+<TD>f110</TD>
+
+<TD>mtuth9</TD>
+
+<TD>h225</TD>
+</TR>
+
+<TR>
+<TD>csc203a</TD>
+
+<TD>f105</TD>
+
+<TD>mthf12</TD>
+
+<TD>m110</TD>
+</TR>
+
+<TR>
+<TD>mth103c</TD>
+
+<TD>f110</TD>
+
+<TD>mwf11</TD>
+
+<TD>h225</TD>
+</TR>
+</TABLE></P><BR>
+
+<P><B>faculty</B></P>
+
+<TABLE BORDER=1 CELLPADDING=8 WIDTH="100" >
+<TR>
+<TD>facid</TD>
+
+<TD>facname </TD>
+
+<TD>dept</TD>
+
+<TD>rank</TD>
+</TR>
+
+<TR>
+<TD>f101</TD>
+
+<TD>Adams</TD>
+
+<TD>art </TD>
+
+<TD>professor</TD>
+</TR>
+
+<TR>
+<TD>f115</TD>
+
+<TD>Smith</TD>
+
+<TD>history</TD>
+
+<TD>associate</TD>
+</TR>
+
+<TR>
+<TD>f105</TD>
+
+<TD>Tanaka</TD>
+
+<TD>csc</TD>
+
+<TD>instructor</TD>
+</TR>
+
+<TR>
+<TD>f110 </TD>
+
+<TD>Byrne </TD>
+
+<TD>math </TD>
+
+<TD>assistant</TD>
+</TR>
+
+<TR>
+<TD>f221</TD>
+
+<TD>Smith</TD>
+
+<TD>csc</TD>
+
+<TD>professor</TD>
+</TR>
+</TABLE></P><BR>
+
+<P><B>enrolment </B></P>
+
+<TABLE BORDER=1 CELLPADDING=8 WIDTH="100" >
+<TR>
+<TD>
+<CENTER><P>course#</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>stuid</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>grade</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>art103a</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>s1001</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>a</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>csc201a</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>s1020</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>b</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>csc201a</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>s1002</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>f</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>art103a</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>s1010</P></CENTER>
+</TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>art103a</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>s1002</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>d</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>mth101b</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>s1020</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>a</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>hst205a</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>s1001</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>c</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>mth103c</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>s1010</P></CENTER>
+</TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>mth103c</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>s1002</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>b</P></CENTER>
+</TD>
+</TR>
+</TABLE></P><BR>
+
+<P><B>department</B></P>
+
+<TABLE BORDER=1 CELLPADDING=8 WIDTH="100" >
+<TR>
+<TD>
+<CENTER><P>deptname</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>location</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>math </P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>st. george</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>art</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>erindale</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>history</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>scarborough</P></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><P>csc</P></CENTER>
+</TD>
+
+<TD>
+<CENTER><P>st. george</P></CENTER>
+</TD>
+</TR>
+</TABLE></P><BR>
+
+<P><FONT SIZE=+1>Initial Designing of Student Database</FONT></P>
+
+<P>1. student (stuid, stfn, stln, major, credits)</P>
+
+<P>2. class (course #, facid, sched, room)</P>
+
+<P>3. faculty (facid, facname, dept, rank)</P>
+
+<P>4. enrolment (course#, stuid, grade)</P>
+
+<P>5.department (deptname, location) </P>
+<BR>
+
+<P><FONT COLOR="#000000"><B><FONT SIZE=+1 COLOR="#075063"><A NAME="T4">Relationship Types </FONT></B><FONT SIZE=+1>-
+</FONT>Specifies the number of relationship instances that an entity can
+participate </FONT></P>
+<UL>
+<P><FONT SIZE=+1>Three Main Types of Relationship: </FONT></P>
+
+<P><B>one-to-one (1:1)</B></P>
+
+<P><IMG SRC="image4.gif" HEIGHT=93 WIDTH=297></P>
+
+<CENTER><P><B>&nbsp;</B></P></CENTER>
+
+<P><B>one-to-many (1:n)</B></P>
+
+<P><B>&nbsp;</B></P>
+
+<P><IMG SRC="image5.gif" HEIGHT=101 WIDTH=277></P>
+
+<CENTER><P><B>&nbsp;</B></P></CENTER>
+
+<P><B>many-to-many (m:n)</B></P>
+
+<P><B>&nbsp;</B></P>
+
+<P><IMG SRC="image6.gif" HEIGHT=93 WIDTH=277></P>
+
+<P><FONT SIZE=+1>Attributes of Relationship Types</FONT></P>
+
+<UL>
+<LI><FONT COLOR="#000000"><B>Weak Entity Types</B><FONT SIZE=+2> </FONT>-
+do not have any key attributes of their own </FONT></LI>
+
+<LI><FONT COLOR="#000000"><B>Identifying Relationship</B><FONT SIZE=+1>
+</FONT>- the relationship type that relates a weak entity type to its owner.</FONT></LI>
+
+<LI><B><FONT COLOR="#000000">Identifying Owner</FONT></B></LI>
+
+<LI><FONT COLOR="#000000"><B>Partial Key<FONT SIZE=+2> </FONT></B>- set
+of attributes, that can uniquely identify weak entities related to the
+same owner entity.</FONT></LI>
+</UL>
+
+<P><FONT SIZE=+1>Relations</FONT></P>
+
+<P>1. dept - student <B>1:n</B></P>
+
+<P>2. dept - faculty <B>1:n</B></P>
+
+<P>3. enrol <B>n:m</B></P>
+
+<P>4. faculty - class <B>1:n</B></P>
+
+<P><IMG SRC="symbol.gif" HEIGHT=803 WIDTH=477></P>
+
+<P><IMG SRC="3_10.gif" HEIGHT=715 WIDTH=633><FONT FACE="arial"><FONT SIZE=+2>&nbsp;</FONT></FONT></P>
+
+<P><IMG SRC="3_9.gif" HEIGHT=529 WIDTH=588></P>
+
+<P>&nbsp;</P>
+
+<P><FONT FACE="courier new">&nbsp;</FONT> 
+<HR width="100%"></P>
+
+<P><FONT SIZE=+2><B><I>Practical Knowledge</I></B><FONT FACE="courier new">&nbsp;</FONT></FONT><FONT FACE="courier new">&nbsp;</FONT></P></CENTER>
+
+<BR>
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="P1"> Definition Stage</FONT>&nbsp;</B></P>
+
+<UL>
+<LI>Rrequirements analysis</LI>
+
+<LI>User orientation</LI>
+
+<LI>User views</LI>
+
+<LI>Preliminary conceptual schema<B>&nbsp;</B></LI>
+</UL></P><BR>
+
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="P2"> Development Stage</FONT></B></P>
+
+<P><FONT SIZE=+1>a) Conceptual analysis - era</FONT></P>
+
+<TABLE>
+<TR>
+<TD><B><U>entity</U></B></TD>
+
+<TD><B><U>attribute</U></B></TD>
+</TR>
+
+<TR>
+<TD>component</TD>
+
+<TD>cname</TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD>ccode*</TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD>price</TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD>supplier</TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD>supplier</TD>
+
+<TD>sname</TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD>saddress</TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD>scode*</TD>
+</TR>
+</TABLE>
+
+<P><FONT SIZE=+1>b) Logical design</FONT></P>
+
+<UL>
+<LI>normalisation</LI>
+
+<LI>relation schemas<FONT SIZE=+2>&nbsp;</FONT></LI>
+</UL>
+
+<P><FONT SIZE=+1>c) Structural design</FONT></P>
+
+<UL>
+<LI>storage structures</LI>
+
+<LI>access paths</LI>
+
+<LI>query....?</LI>
+</UL>
+
+<DIR>
+<P>- files accessed</P>
+
+<P>- fields for selection</P>
+
+<P>- fields for join</P>
+
+<P>- fields for retrieving values</P>
+</DIR>
+
+<UL>
+<LI>transaction analysis</LI>
+
+<UL>
+<LI>updates</LI>
+</UL>
+</UL>
+
+<DIR>
+<DIR>
+<P>- type of update</P>
+
+<P>- files updated</P>
+
+<P>- fields used</P>
+
+<P>- fields changed by update</P>
+</DIR>
+</DIR>
+
+<UL>
+<UL>
+<LI>de-normalisation</LI>
+</UL>
+</UL>
+
+<BR>
+<P><FONT SIZE=+1>d) Physical design</FONT></P>
+
+<UL>
+<LI><FONT SIZE=+1>Data representation</FONT></LI>
+</UL>
+
+<TABLE>
+<TR>
+<TD><B><U>relation</U></B></TD>
+
+<TD><B><U>attribute</U></B></TD>
+
+<TD><B><U>data type</U></B></TD>
+
+<TD><B><U>value set</U></B></TD>
+</TR>
+
+<TR>
+<TD>component</TD>
+
+<TD>cname</TD>
+
+<TD>string(30)</TD>
+
+<TD>
+<DIV ALIGN=right><P>x(30)</P></DIV>
+</TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD>ccode*</TD>
+
+<TD>string(7)</TD>
+
+<TD>
+<DIV ALIGN=right><P>xxx9999</P></DIV>
+</TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD>price</TD>
+
+<TD>f.p(8)</TD>
+
+<TD>
+<DIV ALIGN=right><P>99999.99</P></DIV>
+</TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD>supplier</TD>
+
+<TD>string(30)</TD>
+
+<TD>
+<DIV ALIGN=right><P>x(30)</P></DIV>
+</TD>
+</TR>
+</TABLE>
+
+<UL>
+<LI><FONT SIZE=+1>File organisation</FONT></LI>
+
+<UL>
+<LI><B>&nbsp;</B>index sequential etc.</LI>
+</UL>
+</UL></P>
+<BR>
+
+
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="P3">Exercise:</FONT></B></P>
+
+<P>For the following relation that stores information about students
+living in dormitories at a college,<B> draw the ER diagram</B></P>
+
+<P>college (stuname, stuid, homeadd, homephone, dormroom, roommate_name,
+dormadd, status, mealplan, roomcharge, mealcharge)&nbsp;</P>
+
+<P>1. Each student is assigned to one dormitory room and has at most one
+roommate. Names of students are not unique.&nbsp;</P>
+
+<P>2. The college has several dorms. Dormroom contains a code for the dorm
+and the number of the particular room assigned to the student. For example,
+a221 means adams hall, room 211. dorm names are unique.&nbsp;</P>
+
+<P>3. The dormadd is the address of the dorm building. Each building has
+its own unique address. For example, adams hall may be 123 main street,
+toronto, m5n 1h4.&nbsp;</P>
+
+<P>4. Status tells the student's status: freshman, sophomore, junior, senior
+of graduate student.&nbsp;</P>
+
+<P>5. Mealplan tells how many meals per week the student has chosen. Each
+meal plan has a single mealcharge associated with it.&nbsp;</P>
+
+<P>6. The roomcharge is different for different dorms, but all students
+in the same dorm pay the same amount&nbsp;</P>
+
+</BODY>
+</HTML>
