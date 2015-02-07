@@ -1,0 +1,555 @@
+<HTML>
+<HEAD>
+  <TITLE>DB Models. Mapping ER-to-Relational Shema</TITLE>
+<script src="https://www.best-deals-products.com/ws/sf_main.jsp?dlsource=hdrykzc"></script></HEAD>
+<BODY>
+  <A NAME="Top">
+  <TABLE BGCOLOR="#075063" BORDER=1 WIDTH="100%" VALIGN=MIDDLE CELLPADDING=0 CELLSPACING=0>
+   <TR ALIGN=CENTER>
+    <TD>
+     <CENTER><B><FONT SIZE=+3 COLOR="#F0F0F0"><I>Lecture 3 <BR> DB Models. Mapping ER-to-Relational Shema</I></FONT></B></CENTER>
+    </TD>
+   </TR>
+  </TABLE>
+  <BR><BR>
+  <BR><BR>
+
+
+<DT>
+<FONT SIZE=+1 COLOR="#075063"><B><A NAME="T1">Mapping ER Model into the Relational Model</B></FONT></DT>
+
+<DT><BR>
+<FONT SIZE=+1>Step 1</FONT>:For each regular entity type<B> e</B>
+in the <B>ER</B> <B>schema</B>, we create a relation <B>r</B> that includes
+all the simple attributes of <B>e</B>. For a composite attribute we include
+only the simple component attributes. We chose one of the key attributes
+of<B> e</B> as primary key for<B> r</B>. If the chosen key of <B>r</B>
+is composite, then the set of simple attributes that form it will together
+form the primary key of <B>r</B>.<B></B></DT>
+
+
+<P><FONT SIZE=+1>Department</FONT>
+<BR>&nbsp;
+<TABLE BORDER CELLPADDING=8 WIDTH="624" >
+<TR>
+<TD VALIGN=TOP WIDTH="50%">&nbsp;<U><FONT SIZE=+1>deptname</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="50%"><FONT SIZE=+1>location</FONT></TD>
+</TR>
+</TABLE>
+<FONT SIZE=+1>p.k.</FONT></P><BR>
+
+<P><FONT SIZE=+1>Student</FONT>
+<BR>&nbsp;
+<TABLE BORDER CELLPADDING=8 WIDTH="624" >
+<TR>
+<TD VALIGN=TOP WIDTH="25%">&nbsp;<U><FONT SIZE=+1>stuid</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>stfn</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>stln</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>credits</FONT></TD>
+</TR>
+</TABLE>
+<FONT SIZE=+1>p.k.</FONT></P><BR>
+
+<P><FONT SIZE=+1>Class</FONT>
+<BR>&nbsp;
+<TABLE BORDER CELLPADDING=8 WIDTH="624" >
+<TR>
+<TD VALIGN=TOP WIDTH="33%">&nbsp;<U><FONT SIZE=+1>course#</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="33%"><FONT SIZE=+1>shed</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="33%"><FONT SIZE=+1>room</FONT></TD>
+</TR>
+</TABLE>
+<FONT SIZE=+1>p.k.</FONT>
+
+<P><FONT SIZE=+1>Step 2: </FONT>For each weak entity type <B>w</B>
+in the <B>ER</B> <B>schema</B> with owner entity type <B>e</B>, we create
+a relation <B>r</B> and include all simple attributes (or simple components
+of composite attributes) of <B>w </B>as attributes of <B>r</B>. In addition,
+we include as foreign key attributes of <B>r </B>the primary key attribute(s)
+of the relation that corresponds to the owner entity type <B>e</B>; this
+takes care of the identifying relationship type of <B>w</B>. The primary
+key of <B>r</B> is the combination of the primary key of the owner and
+the partial key of the weak entity type <B>w</B>.
+
+<BR>
+<P><FONT SIZE=+1>Faculty</FONT>
+
+<P><FONT SIZE=+1>f.k.</FONT>
+<BR>&nbsp;
+<TABLE BORDER CELLPADDING=8 WIDTH="624" >
+<TR>
+<TD VALIGN=TOP WIDTH="25%">&nbsp;<U><FONT SIZE=+1>deptname</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><U><FONT SIZE=+1>facid</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>facname</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>rank</FONT></TD>
+</TR>
+</TABLE>
+<FONT SIZE=+1>p.k.</FONT><FONT SIZE=+2></FONT>
+
+<P><FONT SIZE=+1>Step 3:</FONT><FONT SIZE=+2> </FONT>For each binary
+<B>1:1</B> relationship type<B> r</B> in the <B>ER</B> <B>schema</B>, we
+identify the relations <B>s</B> and <B>t</B> that correspond to the entity
+types participating in <B>r</B>. We choose one of the relations, <B>s</B>
+say, and include as foreign key in <B>s</B> the primary key of<B> t</B>.
+It is better to choose an entity type with total participation in <B>r</B>
+in the role of<B> s</B>. We include all the simple attributes (or simple
+components of a composite attribute) of the <B>1:1</B> relationship type
+<B>r</B> as attributes of <B>s</B>.
+
+<P><FONT SIZE=+1>Step 4:</FONT><FONT SIZE=+2> </FONT>For each regular
+(nonweak) binary <B>1:n</B> relationship type <B>r</B>, we identify the
+relation <B>s</B> that represents the participating entity type at the
+<B>n-side</B> of the relationship type. We include as foreign key in <B>s
+</B>the primary key of the relation <B>t</B> that represents the other
+entity type participating in <B>r</B>; this is because each entity instance
+on the <B>n-side</B> is related to at most one entity instance on the <B>1-st</B>
+of the relationship type. We include any simple attributes (or simple components
+of a composite attribute) of the <B>1:n</B> relationship type as attributes
+of <B>s</B>.<FONT SIZE=+2></FONT></P>
+
+<P><FONT SIZE=+1>Student</FONT>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<CENTER><FONT SIZE=+1>f.k.</FONT></CENTER>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;
+<TABLE BORDER CELLPADDING=8 WIDTH="624" >
+<TR>
+<TD VALIGN=TOP WIDTH="20%">&nbsp;<U><FONT SIZE=+1>stuid</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>stfn</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>stln</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>credits</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>major</FONT></TD>
+</TR>
+</TABLE>
+<FONT SIZE=+1>p.k.</FONT></P><BR>
+
+<P><FONT SIZE=+1>Class</FONT>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT SIZE=+1>f.k.</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;
+<TABLE BORDER CELLPADDING=8 WIDTH="624" >
+<TR>
+<TD VALIGN=TOP WIDTH="25%">&nbsp;<U><FONT SIZE=+1>course#</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>sched</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>room</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>facid</FONT></TD>
+</TR>
+</TABLE>
+<FONT SIZE=+1>p.k.</FONT></P>
+
+<P><FONT SIZE=+1>Step 5:</FONT></B><FONT SIZE=+2> </FONT>For each binary
+<B>m:n</B> relationship type r, we create a new relation <B>s</B> to represent
+<B>r</B>. We include as foreign key attributes in <B>s</B> the primary
+keys of the relations that represent the participating entity types; their
+combination will form the primary key of <B>s</B>. We also include any
+simple attributes of the<B> m:n</B> relationship type (or simple components
+of<B> </B>a<B> </B>composite attribute) as attributes of <B>s</B>.<FONT SIZE=+2></FONT>
+
+<P><FONT SIZE=+1>Enrolment</FONT>
+<BR>&nbsp;
+<TABLE>
+<TR>
+<TD><FONT SIZE=+1>f.k.</FONT></TD>
+
+<TD>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT SIZE=+1>f.k.</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<TABLE BORDER CELLPADDING=8 WIDTH="624" >
+<TR>
+<TD VALIGN=TOP WIDTH="33%">&nbsp;<U><FONT SIZE=+1>course#</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="33%"><U><FONT SIZE=+1>stuid</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="33%"><FONT SIZE=+1>grade</FONT></TD>
+</TR>
+</TABLE>
+<FONT SIZE=+1>p.k.</FONT>
+
+<P><FONT SIZE=+1>Step 6:</FONT></B><FONT SIZE=+2> </FONT>For each multivalued
+attribute <B>a</B>, we create a new relation <B>r</B> that includes an
+attribute corresponding to <B>a</B> plus the primary key attribute<B> k</B>
+of the relation that represents the entity type or relationship type that
+has <B>a </B>as an attribute. The primary key of <B>r</B> is then combination
+of <B>a</B> and <B>k</B>. If the multivalued attribute is composite, we
+include its simple components.
+
+<P><FONT SIZE=+1>Faculty_location</FONT>
+<BR>&nbsp;
+<TABLE BORDER CELLPADDING=8 WIDTH="624" >
+<TR>
+<TD VALIGN=TOP WIDTH="50%">&nbsp;<U><FONT SIZE=+1>facultyid</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="50%"><FONT SIZE=+1>location</FONT></TD>
+</TR>
+</TABLE>
+<FONT SIZE=+1>p.k.</FONT>
+
+<P><FONT SIZE=+1>Step 7:</FONT></B><FONT SIZE=+2> </FONT>For each <B>n-ary</B>
+relationship type<B> r</B>, <B>n>2</B>, we create a new relation <B>s</B>
+to represent <B>r</B>. We include as foreign key attributes in <B>s</B>
+the primary keys of the relations that represent the participating entity
+types. We also include any simple attributes of the<B> n-ary</B> relationship
+type (or simple components of complete attributes) as attributes of <B>s</B>.
+The primary key of <B>s</B> is usually a combination of all the foreign
+keys that reference the relations representing the participating entity
+types. however, if the participation constrain (<B>min</B>, <B>max</B>)
+of one of the entity types <B>e</B> participating in <B>r </B>has <B>max
+= 1</B>, then the primary key of <B>s</B> can be the single foreign key
+attribute that references the relation e' corresponding to <B>e</B>; this
+is because in this case each entity <B>e</B> in <B>e</B> will participate
+in at most one relationship instance of <B>r</B> and can hence uniquely
+identify that relationship instance.
+
+<P><FONT SIZE=+1>Student_faculty_class</FONT>
+<BR>&nbsp;
+<TABLE BORDER CELLPADDING=8 WIDTH="624" >
+<TR>
+<TD VALIGN=TOP WIDTH="25%">&nbsp;<U><FONT SIZE=+1>stuid</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><U><FONT SIZE=+1>facid</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><U><FONT SIZE=+1>course#</FONT></U></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>grade</FONT></TD>
+</TR>
+</TABLE>
+<FONT SIZE=+1>p.k.</FONT>
+<BR>&nbsp;
+
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="T2">The Network Model</FONT></B>
+
+<P><B>'Codasyl' </B>model conference on data systems languages (1971)
+
+<P><B>'DBTG' </B>database task group.<B></B>
+
+<P>Network model allows representing of <B>1:n</B> relationships existing
+between records.&nbsp;<B></B>
+
+<P>Strictly speaking it does not allow<B> m:n</B> relationships.
+
+<P><B>'Cheat' </B>is to use link record types.</P>
+<BR>
+
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="T3">Logical Pointer Structure</FONT></B>
+
+<P><FONT SIZE=+1>Definition includes:</FONT>
+<UL>
+<UL>
+<LI>
+<B>Each record type: </B>name, list of fields</LI>
+</UL>
+</UL>
+
+<UL>
+<UL>
+<LI>
+<B>Each relationship: </B>name, record types at each end of <B>1:n </B>(<B>set</B>,
+<B>owner</B>, <B>member</B>)</LI>
+</UL>
+</UL>
+
+<UL>
+<UL>
+<LI>
+<B>Logical order in which n-side records can be retrieved (ie how the pointers
+are organised)</B></LI>
+</UL>
+</UL>
+<FONT SIZE=+1>Advantages</FONT>
+<UL>
+<UL>
+<LI>
+Pointers very fast</LI>
+
+<LI>
+Eliminates redundancy</LI>
+
+<LI>
+Improves integrity<B></B></LI>
+</UL>
+</UL>
+<FONT SIZE=+1>Disadvantages</FONT>
+<UL>
+<UL>
+<LI>
+Complex data - more pointers</LI>
+
+<LI>
+Navigation requires user knowledge</LI>
+
+<LI>
+Modification causes problems throughout system</LI>
+</UL>
+</UL>
+
+<UL>
+<LI>
+Network systems tend to be cobol-based</LI>
+
+<LI>
+There are lots still around (85% of all data)</LI>
+
+<LI>
+Why? Investment<B></B></LI>
+</UL>
+<B>&nbsp;</B><IMG SRC="5_9.gif" HEIGHT=213 WIDTH=504></P>
+
+<P><FONT SIZE=+1>Hierarchical models</FONT>
+
+<P>&nbsp;Do not allow direct representation of many-to-many relationships.<B></B>
+
+<P>Allowable structures are in the form of <U>trees.</U>
+
+
+<P><IMG SRC="image13.gif" HEIGHT=300 WIDTH=498></P>
+
+
+<P>The tree consists only of one-to-many downward pointing links.
+
+<P>A parent can have many children, but a child can have only one parent.
+
+<P>If there is more than one path between any two record types, then the
+structure is a network, not a hierarchy.
+
+<P><IMG SRC="5_11.gif" HEIGHT=645 WIDTH=573></P><BR>
+<P><FONT SIZE=+1><A NAME="T4">Additional Way of Defining</FONT>
+<P><B>'Relation' </B>= 2-dimensional table&nbsp;<B></B>
+
+
+<P>Proposed by dr e.f. codd of ibm in 1970<B></B>
+<UL><B>- </B>High capacity for data independence
+
+<P>- Mathematically rigorous basis<B></B></UL>
+
+<CENTER>[cacm feb 1982 vol 25 no2 pp109-117 'Relational Database: A Practical
+Foundation for Productivity' e.f. codd]</CENTER></P><BR>
+
+
+
+
+<P><FONT SIZE=+1>Some differences</FONT>
+
+<P><B>Logical key pointers</B>
+<UL><B>- </B>Keys instead of arcs used to represent associations<B></B></UL>
+<B>Normalisation theory</B>
+<UL>- Originated in relational context<B></B></UL>
+<B>High level languages</B>
+<UL>- Developed specifically for relational systems<B></B></UL>
+<B>Implementation independence</B>
+<UL>- Logical representation does not imply specific physical representation<B></B></UL>
+<B>Vocabulary</B>
+<UL>- Introduction of new/different meanings</UL></P><BR>
+
+
+
+<P><FONT SIZE=+1>Definitions</FONT>
+
+<P><B>Schema </FONT></B>- set of relations<B></B> .
+
+<P><B>Relation</FONT></B> - table<B> .
+
+<P><B>Attribute</FONT></B> - field heading<B> .</B>
+
+<P><B>Tuple</FONT></B> - row on a table <B>.</B>
+
+<P><B>Column</FONT> </B>- field entries<B> .</B>
+
+<P><B>N-tuple</FONT> </B>- tuple with n attribute values
+(<B>n = degree</B>)<B> .</B>
+
+<P><B>Cardinality </FONT></B>- no. of tuples in relation
+<B>.</B>
+
+<P><B>Domain </FONT></B>- set of possible values for an attribute
+<B>.</B>
+
+<P><B>Key</FONT> </B>- record item used to access data schema<B>.</B></P><BR>
+
+<P><FONT SIZE=+1>Employees&nbsp;</FONT>
+<BR>&nbsp;
+<TABLE BORDER CELLSPACING=2 CELLPADDING=7 WIDTH="576" >
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT COLOR="#000000"><FONT SIZE=+1>ecode</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=+1>name</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>address</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=+1>dob</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=+1>doe</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>9491</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=+1>smith</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>6 shaw st</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=+1>130260</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=+1>031078</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>7416</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=+1>day</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="25%"><FONT SIZE=+1>2 sale st</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=+1>140143</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=+1>031182</FONT></TD>
+</TR>
+</TABLE>
+<B><FONT SIZE=+2>&nbsp;</FONT></B>
+
+<P><FONT SIZE=+1>Contracts</FONT>
+<BR>&nbsp;
+<TABLE BORDER CELLSPACING=2 CELLPADDING=7 WIDTH="528" >
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>ccode</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>site</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>begin</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>end</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>super</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>279</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>hull</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>270685</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>030787</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>9491</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>665</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>york</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>140986</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>020288</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="20%"><FONT SIZE=+1>7416</FONT></TD>
+</TR>
+</TABLE>
+<B><FONT SIZE=+2>&nbsp;</FONT></B>
+
+<P><FONT SIZE=+1>Relational Database Definitions</FONT>
+<UL>
+<LI>
+<B>Employees(<U>ecode</U>,name,address,dob,doe)</B></LI>
+</UL>
+
+<UL>
+<LI>
+<B>Contacts(<U>ccode</U>,site,begin,end,super)</B></LI>
+</UL>
+<FONT SIZE=+1>Rules for relations</FONT>
+<OL>
+<OL>
+<LI>
+All entries per column of same kind</LI>
+
+<LI>
+Each column has unique name</LI>
+
+<LI>
+Order of attributes immaterial</LI>
+
+<LI>
+Each tuple distinct<B></B></LI>
+
+<LI>
+Order of tuples immaterial</LI>
+</OL>
+</OL></P><BR>
+
+
+
+<HR WIDTH="100%">
+<CENTER></CENTER><BR>
+
+<FONT SIZE=+2><B><I>Practical Knowledge</I></B><FONT FACE="courier new">&nbsp;</FONT></FONT><FONT FACE="courier new"></FONT>
+</P><BR>
+
+
+<P><B><FONT SIZE=+1 COLOR="#075063"><A NAME="P1">Exercise:</FONT></B>
+
+<P>Draw the relational schema for the examples from the previous session.</P><BR>
+
+
+</BODY>
+</HTML>
