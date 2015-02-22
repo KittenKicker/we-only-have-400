@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../plugin/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+    <script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="../plugin/jquery-jplayer/jquery.jplayer.js"></script>
+    <script type="text/javascript" src="../plugin/ttw-music-player-min.js"></script>
+    
+
+    <script type="text/javascript">
+    var dir = "audio/";
+    var fileextension = ".mp3";
+    var myPlaylist = [];
+    var counter = 0;
+    $.ajax({
+        //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+        url: dir,
+        success: function (data) {
+            //Lsit all png file names in the page
+            $(data).find("a:contains(" + fileextension + ")").each(function () {
+                var filename = this.href.replace(window.location, "").replace("file:///", "");
+                var nextFile = { mp3: + dir + file, title:'test', artist:'dj'};
+                myPlaylist.push(nextFile);
+                alert(nextFile);
+            });
+        }
+    });
+
+        $(document).ready(function(){
+            var description = 'Choose the podcast you want to listen to.';
+
+            $('body').ttwMusicPlayer(myPlaylist, {
+                autoPlay:false, 
+                description:description,
+                jPlayer:{
+                    swfPath:'../plugin/jquery-jplayer' //You need to override the default swf path any time the directory structure changes
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="title"></div>
+</body>
+</html>
