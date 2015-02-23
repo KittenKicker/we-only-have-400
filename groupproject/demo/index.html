@@ -15,20 +15,22 @@
     var fileextension = ".mp3";
     var myPlaylist = [];
     var counter = 0;
+    var length;
     $.ajax({
-        //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-        url: dir,
-        success: function (data) {
-            //Lsit all png file names in the page
-            $(data).find("a:contains(" + fileextension + ")").each(function () {
-                var filename = this.href.replace(window.location, "").replace("file:///", "");
-                var nextFile = { mp3: + dir + file, title:'test', artist:'dj'};
-                myPlaylist.push(nextFile);
-                alert(nextFile);
-            });
+        type: "GET",
+        dataType: "json",
+        url: "getmusic.php",
+        data: data,
+        success: function(data)
+        {
+            length = data.length
+            while(counter < length)
+            {
+                var nextSong = { mp3: 'audio/' + data[0], title:data[0]}
+                myPlaylist.push(nextSong);
+            }
         }
     });
-
         $(document).ready(function(){
             var description = 'Choose the podcast you want to listen to.';
 
