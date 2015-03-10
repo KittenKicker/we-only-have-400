@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Devin Holland Question 1
+  </title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="1000">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script type="text/javascript">
+
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.fillStyle = "green";
+  ctx.fillRect(100, 100, 600, 600);
+
+  var centerX = 400;
+  var centerY = 400;
+  var radius = 150;
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+</script> 
+
+</body>
+</html>
+
+</body>
+</html>
