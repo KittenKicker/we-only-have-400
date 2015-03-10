@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <title>Podcast Upload</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Podcast Upload</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template" style="padding: 20px">
+        <div class="col-xs-4 col-sm-offset-4" style="padding-bottom: 20px; border: 1px solid rgba(0,0,0,0.1); border-radius: 6px;">
+		<h3 style="padding-bottom: 20px; font-weight: bold; text-align: center">Upload your podcast here!</h3>
+		<form role="form" id="podcast-form" action="upload.php" enctype="multipart/form-data" method="POST">
+		<div class="form-group">
+			<label for="name">DJ Name:</label>
+			<input type="text" class="form-control" id="name" required>
+		</div>
+		<div class="form-group">
+			<label for="datez">Date Aired:</label>
+			<input type="date" class="form-control" id="datez" required>
+		</div>
+		<div class="form-group">
+			<label for="upload">File:</label>
+			<input type="file" class="form-control" name="upload" id="upload" required>
+		</div>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+	</form>
+	</div>
+    </div>
+
+    </div>
+  </body>
+</html>

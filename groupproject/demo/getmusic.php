@@ -4,7 +4,7 @@ $array = array();
 
 if(is_dir($dir))
 {
-    if($dh = opendir($dir)) !== false)
+    if(($dh = opendir($dir)) !== false)
     {
         while(($file = readdir($dh)) !== false)
         {

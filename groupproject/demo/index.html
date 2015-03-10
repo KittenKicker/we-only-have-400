@@ -14,21 +14,16 @@
     var dir = "audio/";
     var fileextension = ".mp3";
     var myPlaylist = [];
-    var counter = 0;
+    var counter = 2;
     var length;
-    $.ajax({
-        type: "GET",
-        dataType: "json",
-        url: "getmusic.php",
-        data: data,
-        success: function(data)
+    $.get( "getmusic.php", function( data ) {
+        data = $.parseJSON(data);
+		length = data.length
+        while(counter < length)
         {
-            length = data.length
-            while(counter < length)
-            {
-                var nextSong = { mp3: 'audio/' + data[0], title:data[0]}
-                myPlaylist.push(nextSong);
-            }
+            var nextSong = { mp3: 'audio/' + data[counter], title:data[counter]}
+            myPlaylist.push(nextSong);
+			counter++;
         }
     });
         $(document).ready(function(){
