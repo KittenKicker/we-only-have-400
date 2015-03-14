@@ -16,16 +16,6 @@
     var myPlaylist = [];
     var counter = 2;
     var length;
-    $.get( "getmusic.php", function( data ) {
-        data = $.parseJSON(data);
-		length = data.length
-        while(counter < length)
-        {
-            var nextSong = { mp3: 'audio/' + data[counter], title:data[counter]}
-            myPlaylist.push(nextSong);
-			counter++;
-        }
-    });
         $(document).ready(function(){
             var description = 'Choose the podcast you want to listen to.';
 
@@ -40,7 +30,33 @@
     </script>
 </head>
 <body>
-
+<form action="" method="post" id="search">
+	DJ Name: <input type="text" id="name"><br/><br/>
+	Date Aired: <input type="date" id="datez"><br/>
+	<input type="submit" content="Submit">
+</form>
+<script>
+$("#search").submit(function (e) {
+    e.preventDefault();
+	var name = $("#name").val();
+	var date = $("#datez").val();
+	var arr = [name, date];
+	$.ajax({
+			type: "POST",
+			url: "getmusic.php",
+			data:{ data : JSON.stringify(arr) },
+			dataType: "json",
+			success: function(data) {
+				data = $.parseJSON(data);
+				length = data.length
+				while(counter < length) {
+					var nextSong = { mp3: 'audio/' + data[counter], title:data[counter]}
+					myPlaylist.push(nextSong);
+					counter++;
+				}
+			}
+	});
+</script>
 <div id="title"></div>
 </body>
 </html>
