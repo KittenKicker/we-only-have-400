@@ -28,7 +28,7 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["upload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["upload"]["name"]). " has been uploaded.";
-		$conn->query("INSERT into Web_Project_Audio (DJ_Name, Date, File) VALUES ($_POST['name'], $_POST['datez'], $_FILES['upload']['name'])");
+		$conn->query("INSERT into Web_Project_Audio (DJ_Name, Date, File) VALUES ('" . $_POST['name'] . "','" . $_POST['datez'] . "','" . $_FILES['upload']['name'] . "')");
     } else {
         echo "Error: your file was not uploaded.";
     }

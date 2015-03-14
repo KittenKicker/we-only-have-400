@@ -1,61 +1,75 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="../plugin/css/style.css">
     <link rel="stylesheet" type="text/css" href="css/demo.css">
-    <script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../plugin/jquery-jplayer/jquery.jplayer.js"></script>
     <script type="text/javascript" src="../plugin/ttw-music-player-min.js"></script>
+    </script>
     
+</head>
+<body style="background-color:#d3d3d3">
+<form action="" method="post" id="search">
+<div class="container">
+<div class="row">
+<br />
+  <div class="form-group">
+	 <label for="name">DJ Name: </label><input class="form-control" type="text" name="name" id="name">
+ </div>
+  <div class="form-group">
+	 <label for="datez">Date Aired: </label><input class="form-control" type="date" name="datez" id="datez"><br/>
+  </div>
+	<input type="submit" content="Submit">
+</div>
+</div>
+</form>
+<div id="player">
+</div>
+<script>
+$("#search").submit(function (e) {
+    e.preventDefault();
+	var name = $("#name").val();
+	var date = $("#datez").val();
+  var arr = [name,date];
+	var datastring = 'name=' + name + "&date=" + date;
+  var myPlaylist = [];
+  var counter = 0;
+  var length;
+	$.ajax({
+			type: "POST",
+			url: "getmusic.php",
+			data:{ data : JSON.stringify(arr) },
+			success: function(data) {
+        myPlaylist = [];
+        counter = 0;
 
-    <script type="text/javascript">
-    var dir = "audio/";
-    var fileextension = ".mp3";
-    var myPlaylist = [];
-    var counter = 2;
-    var length;
-        $(document).ready(function(){
-            var description = 'Choose the podcast you want to listen to.';
+				data = $.parseJSON(data);
+				length = data.length
+				while(counter < length-1) {
+					var nextSong = { mp3: 'audio/' + data[counter], title:data[++counter]}
+					myPlaylist.push(nextSong);
+					counter++;
+				}
 
-            $('body').ttwMusicPlayer(myPlaylist, {
+        var description = 'Choose the podcast you want to listen to.';
+
+            $("#player").html("");
+            $('#player').ttwMusicPlayer(myPlaylist, {
                 autoPlay:false, 
                 description:description,
                 jPlayer:{
                     swfPath:'../plugin/jquery-jplayer' //You need to override the default swf path any time the directory structure changes
                 }
             });
-        });
-    </script>
-</head>
-<body>
-<form action="" method="post" id="search">
-	DJ Name: <input type="text" id="name"><br/><br/>
-	Date Aired: <input type="date" id="datez"><br/>
-	<input type="submit" content="Submit">
-</form>
-<script>
-$("#search").submit(function (e) {
-    e.preventDefault();
-	var name = $("#name").val();
-	var date = $("#datez").val();
-	var arr = [name, date];
-	$.ajax({
-			type: "POST",
-			url: "getmusic.php",
-			data:{ data : JSON.stringify(arr) },
-			dataType: "json",
-			success: function(data) {
-				data = $.parseJSON(data);
-				length = data.length
-				while(counter < length) {
-					var nextSong = { mp3: 'audio/' + data[counter], title:data[counter]}
-					myPlaylist.push(nextSong);
-					counter++;
-				}
+
 			}
 	});
+});
 </script>
 <div id="title"></div>
 </body>
