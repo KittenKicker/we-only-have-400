@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
 <?php
 $servername = "webtech.kettering.edu";
 $username = "holl4332";
@@ -7,10 +13,10 @@ $conn = new mysqli($servername, $username, $password, $username);
 
 
 if(isset($_FILES["upload"])) {
-	$target_dir = "audio/";
-	$target_file = $target_dir . basename($_FILES["upload"]["name"]);
-	$uploadOk = 1;
-	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    $target_dir = "audio/";
+    $target_file = $target_dir . basename($_FILES["upload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 // Check if file already exists
 if (file_exists($target_file)) {
@@ -28,10 +34,14 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["upload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["upload"]["name"]). " has been uploaded.";
-		$conn->query("INSERT into Web_Project_Audio (DJ_Name, Date, File) VALUES ('" . $_POST['name'] . "','" . $_POST['datez'] . "','" . $_FILES['upload']['name'] . "')");
+        $conn->query("INSERT into Web_Project_Audio (DJ_Name, Date, File) VALUES ('" . $_POST['name'] . "','" . $_POST['datez'] . "','" . $_FILES['upload']['name'] . "')");
     } else {
         echo "Error: your file was not uploaded.";
     }
 }
 }
 ?>
+<br/>
+<a href="form.html"><button>Back to form</button></a>
+</body>
+</html>
